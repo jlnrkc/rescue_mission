@@ -1,0 +1,13 @@
+<h1>Question Queue</h1>
+
+  <div>
+    <% @questions.each do |question| %>
+    <div class="question">
+      <h4>User Name: <%= question.user.name %> </h4>
+      <div>Question Title: <%= question.title %> </div>
+      <div>Question Content: <%= question.question_content %> </div>
+      <%= link_to 'Edit Existing Question', edit_question_path(question) %>
+    <% end %>
+  </div>
+  <p></p>
+  <%= link_to "New Question", new_question_path %>
